@@ -76,6 +76,8 @@ func main() {
 	if err != nil {
 		if !errors.Is(err, os.ErrExist) {
 			log.Printf("error creating file: %q\n", err.Error())
+		} else {
+			jsonFile, _ = os.Open("out.json")
 		}
 	}
 
